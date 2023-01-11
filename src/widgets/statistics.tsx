@@ -49,8 +49,8 @@ export const Statistics = () => {
 
   if(context == "Current Rem") allCards = allCardsInContext; 
 
-
-
+  // filter allCards where card.createdAt is after 1669881600000 12.01.22
+  allCards = allCards?.filter(card => card.createdAt > 1669881600000);
 
   daysOutlook = useTracker(() => plugin.settings.getSetting('statistics-nDays-outlook'));
 
@@ -60,10 +60,10 @@ export const Statistics = () => {
     chartColor = chartColorSettings;
   }
 
-  return <div style={{ maxHeight: "calc(90vh)" }} class="statisticsBody overflow-y-auto">
+  return <div style={{ maxHeight: "calc(90vh)", padding: "2rem" }} class="statisticsBody overflow-y-auto">
     <div><b>Context: </b> {context}</div>
     <div><b>Retention rate: </b> {(retentionRate(getNumberRepetitionsGroupedByScore(allCards)))}</div>
-    <div class="vSpacing-1rem"/>
+    <div style={{ height: "1rem" }} class="vSpacing-1rem"/>
     {chart_column(
       transformObjectToCategoryFormat(getNumberRepetitionsGroupedByScore(allCards)), 
       'category', 

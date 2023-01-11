@@ -1,6 +1,6 @@
 import { declareIndexPlugin, ReactRNPlugin, WidgetLocation } from '@remnote/plugin-sdk';
-import '../style.css';
-import '../App.css';
+// import '../styles.css';
+// import '../App.css';
 
 async function onActivate(plugin: ReactRNPlugin) {
 
@@ -17,7 +17,7 @@ async function onActivate(plugin: ReactRNPlugin) {
   // A command that opens the heatmap widget in a new pane 
   await plugin.app.registerCommand({
     id: 'open-statistics',
-    name: 'Open Statistics',
+    name: 'Open Statistics2',
     action: async () => {
       plugin.widget.openPopup('statistics');
     },
