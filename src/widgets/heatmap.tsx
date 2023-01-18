@@ -102,7 +102,7 @@ export const Heatmap = () =>
 
   return <div class="heatmapBody" style={{ padding: "3rem" }}>
     <div><b>Context: </b>{context}</div>
-    {/* {renderHeatmap(categorizeDataByWeekday(fullArrayRepetitionsPerDay))} */}
+    {renderHeatmap(categorizeDataByWeekday(fullArrayRepetitionsPerDay))}
     <HeatMap2
       value={repetitionsPerDay}
       rectSize={14}
@@ -185,11 +185,11 @@ function renderHeatmap ( WeekdaySeries )
       },
       chart: {
         toolbar: {
-          show: false
+          show: true
         }
       },
       dataLabels: {
-        enabled: false
+        enabled: true
       },
       legend: {
         show: true,
@@ -257,8 +257,8 @@ function renderHeatmap ( WeekdaySeries )
       options={Heatmap.options}
       series={Heatmap.series}
       type="heatmap"
-      width="800"
-      height="200"
+      width="1000"
+      height="300"
     />
   </div>
 }
